@@ -32,9 +32,13 @@ sudo sed -i 's/#\?LogLevel .*/LogLevel VERBSOE/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?ListenAddress .*/ListenAddress 0.0.0.0/' /etc/ssh/sshd_config
 #Banner
 
+#Restart SSH service
+sudo sshd -t
+sudo systemctl restart ssh
+
+#Install Package
 sodo apt-get update
 sudo apt install bash-completion
-#audit
 sudo apt-get install auditd
 service status auditd
 auditd start
