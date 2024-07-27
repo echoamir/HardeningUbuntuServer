@@ -40,9 +40,9 @@ sudo systemctl restart ssh
 sodo apt-get update
 sudo apt install bash-completion
 sudo apt-get install auditd
-service status auditd
 auditd start
-auditd restart
+service status auditd
+
 
 
 
