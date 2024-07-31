@@ -32,6 +32,10 @@ sudo sed -i 's/#\?LogLevel .*/LogLevel VERBSOE/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?ListenAddress .*/ListenAddress 0.0.0.0/' /etc/ssh/sshd_config
 #Banner
 
+grep 'PasswordAuthentication \|Port \|PubkeyAuthentication \|PermitRootLogin \|ListenAddress \|UsePAM \|X11Forwarding \|AllowUsers \|AllowGroups \|LogLevel \|MaxAuthTries \|MaxSessions ' /etc/ssh/sshd_config
+
+
+
 #Restart SSH service
 sudo sshd -t
 sudo systemctl restart ssh
