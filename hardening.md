@@ -36,7 +36,7 @@ sudo sed -i 's/#\?UsePAM .*/UsePAM yes/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?ChallengeResponseAuthentication .*/ChallengeResponseAuthentication no/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?MaxAuthTries .*/MaxAuthTries 3/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?MaxSessions .*/MaxSessions 2/' /etc/ssh/sshd_config
-sudo sed -i 's/#\?LogLevel .*/LogLevel VERBSOE/' /etc/ssh/sshd_config
+sudo sed -i 's/#\?LogLevel .*/LogLevel VERBOSE/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?ListenAddress .*/ListenAddress 0.0.0.0/' /etc/ssh/sshd_config
 #Banner
 ```
