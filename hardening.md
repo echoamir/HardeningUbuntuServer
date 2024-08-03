@@ -1,7 +1,8 @@
+###
 adduser deployer
 usermod -aG sudo deployer
 usermod -aG www-data deployer
-
+###
 su - deployer
 
 mkdir ~/.ssh
