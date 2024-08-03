@@ -1,16 +1,24 @@
+## Add user 
+```
 adduser deployer
 usermod -aG sudo deployer
 usermod -aG www-data deployer
-
+```
+```
 su - deployer
-
+```
+## Add public keys
+```
 mkdir ~/.ssh
 chmod 700 ~/.ssh
 touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 chown -R deployer:deployer /home/deployer/.ssh
 vim ~/.ssh/authorized_keys
+```
 
+## Config sshd file
+```
 sudo sed -i 's/#\?PermitRootLogin .*/PermitRootLogin no/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?Port .*/Port 2222/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?PubkeyAuthentication .*/PubkeyAuthentication yes/' /etc/ssh/sshd_config
@@ -31,21 +39,28 @@ sudo sed -i 's/#\?MaxSessions .*/MaxSessions 2/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?LogLevel .*/LogLevel VERBSOE/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?ListenAddress .*/ListenAddress 0.0.0.0/' /etc/ssh/sshd_config
 #Banner
+```
 
-# Confirm changes
+
+
+## Confirm changes
+```
 grep 'PasswordAuthentication \|Port \|PubkeyAuthentication \|PermitRootLogin \|ListenAddress \|UsePAM \|X11Forwarding \|AllowUsers \|AllowGroups \|LogLevel \|MaxAuthTries \|MaxSessions ' /etc/ssh/sshd_config
+```
 
-#Restart SSH service
+## Restart SSH service
+```
 sudo sshd -t
 sudo systemctl restart ssh
-
-#Install Package
+```
+## Install Package
+```
 sodo apt-get update
 sudo apt install bash-completion
 sudo apt-get install auditd
 auditd start
 service status auditd
-
+```
 
 
 
