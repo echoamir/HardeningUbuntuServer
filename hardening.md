@@ -57,13 +57,22 @@ sudo systemctl restart ssh
 ```
 sodo apt-get update
 sudo apt install bash-completion
+sudo apt install -y rsyslog
 sudo apt-get install auditd
 auditd start
 service auditd status
 ```
-
- 
-
+### iptables  
+```
+sudo iptables -A INPUT -p tcp --dport 2222 -j ACCEPT
+sudo iptables -P INPUT DROP
+sudo iptables -P FORWARD DROP
+sudo iptables -P OUTPUT ACCEPT 
+sudo iptables -A INPUT -i lo -j ACCEPT
+sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+```
 
 
 
