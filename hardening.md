@@ -64,6 +64,7 @@ sudo service auditd status
 ```
 ## iptables  
 ```
+sudo apt install iptables-persistent
 sudo iptables -A INPUT -p tcp --dport 2222 -j ACCEPT
 sudo iptables -P INPUT DROP
 sudo iptables -P FORWARD DROP
