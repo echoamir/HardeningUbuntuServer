@@ -38,7 +38,6 @@ sudo sed -i 's/#\?MaxAuthTries .*/MaxAuthTries 3/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?MaxSessions .*/MaxSessions 2/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?LogLevel .*/LogLevel VERBOSE/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?ListenAddress .*/ListenAddress 0.0.0.0/' /etc/ssh/sshd_config
-sudo sed -i 's/#\?Banner .*/Banner /etc/issue.net /' /etc/ssh/sshd_config
 #Banner
 ```
 
@@ -56,12 +55,12 @@ sudo systemctl restart ssh
 ```
 ## Install Package
 ```
-sodo apt-get update
+sudo apt-get update
 sudo apt install bash-completion
 sudo apt install -y rsyslog
 sudo apt-get install auditd
-auditd start
-service auditd status
+sudo service auditd start
+sudo service auditd status
 ```
 ## iptables  
 ```
