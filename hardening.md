@@ -59,10 +59,10 @@ sodo apt-get update
 sudo apt install bash-completion
 sudo apt-get install auditd
 auditd start
-service status auditd
+service auditd status
 ```
 
-
+ 
 
 
 
