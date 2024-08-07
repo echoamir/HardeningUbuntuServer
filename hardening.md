@@ -62,7 +62,7 @@ sudo apt-get install auditd
 auditd start
 service auditd status
 ```
-### iptables  
+## iptables  
 ```
 sudo iptables -A INPUT -p tcp --dport 2222 -j ACCEPT
 sudo iptables -P INPUT DROP
