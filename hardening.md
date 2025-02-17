@@ -1,11 +1,11 @@
 ## Add user 
 ```
-adduser deployer
-usermod -aG sudo deployer
-usermod -aG www-data deployer
+adduser maratus
+usermod -aG sudo maratus
+usermod -aG www-data maratus
 ```
 ```
-su - deployer
+su - maratus
 ```
 ## Add public keys
 ```
@@ -13,7 +13,7 @@ mkdir ~/.ssh
 chmod 700 ~/.ssh
 touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
-chown -R deployer:deployer /home/deployer/.ssh
+chown -R maratus:maratus /home/maratus/.ssh
 vim ~/.ssh/authorized_keys
 ```
 
