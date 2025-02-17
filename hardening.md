@@ -65,14 +65,17 @@ sudo service auditd status
 ## iptables  
 ```
 sudo apt install iptables-persistent
-sudo iptables -A INPUT -p tcp --dport 2222 -j ACCEPT
-sudo iptables -P INPUT DROP
-sudo iptables -P FORWARD DROP
-sudo iptables -P OUTPUT ACCEPT 
-sudo iptables -A INPUT -i lo -j ACCEPT
-sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
-sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+*filter
+-A INPUT -i lo -j ACCEPT
+-A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+-A INPUT -p tcp --dport 1999 -j ACCEPT
+-A INPUT -p tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp --dport 443 -j ACCEPT
+-P INPUT DROP
+-P FORWARD DROP
+-P OUTPUT ACCEPT
+COMMIT
+
 ```
 
 
