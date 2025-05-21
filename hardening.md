@@ -20,7 +20,7 @@ vim ~/.ssh/authorized_keys
 ## Config sshd file
 ```
 sudo sed -i 's/#\?PermitRootLogin .*/PermitRootLogin no/' /etc/ssh/sshd_config
-sudo sed -i 's/#\?Port .*/Port 2222/' /etc/ssh/sshd_config
+sudo sed -i 's/#\?Port .*/Port 1999/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?PubkeyAuthentication .*/PubkeyAuthentication yes/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?PasswordAuthentication .*/PasswordAuthentication no/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?AllowAgentForwarding .*/AllowAgentForwarding no/' /etc/ssh/sshd_config
