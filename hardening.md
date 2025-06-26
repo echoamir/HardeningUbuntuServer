@@ -30,8 +30,6 @@ sudo sed -i 's/#\?PrintMotd .*/PrintMotd no/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?TCPKeepAlive .*/TCPKeepAlive no/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?Compression .*/Compression no/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?ClientAliveCountMax .*/ClientAliveCountMax 2/' /etc/ssh/sshd_config
-sudo sed -i 's/#\?AllowUsers .*/AllowUsers deployer/' /etc/ssh/sshd_config
-sudo sed -i 's/#\?AllowGroups .*/AllowGroups deployer/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?UsePAM .*/UsePAM yes/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?ChallengeResponseAuthentication .*/ChallengeResponseAuthentication no/' /etc/ssh/sshd_config
 sudo sed -i 's/#\?MaxAuthTries .*/MaxAuthTries 3/' /etc/ssh/sshd_config
